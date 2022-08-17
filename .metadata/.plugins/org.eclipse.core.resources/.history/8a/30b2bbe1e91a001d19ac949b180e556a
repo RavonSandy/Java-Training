@@ -1,0 +1,45 @@
+package Project.Orange;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class StepDef 
+{
+	static WebDriver driver;
+	
+	@Given("Launch the url")
+	public void launch()
+	{
+		ChromeOptions chromeOptions = new ChromeOptions();
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver(chromeOptions);
+		driver.manage().window().maximize();
+		driver.get("https://opensource-demo.orangehrmlive.com/");
+	}
+	
+	@When("Enter username and password")
+	public void loginCred()
+	{
+		
+	}
+	
+	@And("Validate the homepage")
+	public void validate()
+	{
+		
+	}
+	
+	@Then("Logging out the application")
+	public void logout()
+	{
+		
+	}
+	
+}

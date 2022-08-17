@@ -1,0 +1,79 @@
+package seleniumproject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class FirstPrg {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chromedriver","chromedriver.exe");  
+	    WebDriver driver=new ChromeDriver();
+	    
+	    driver.manage().window().maximize();
+	    	    
+	    /*System.setProperty("webdriver.gecko.driver","geckodriver.exe");
+	    WebDriver driver = new FirefoxDriver();*/
+	    
+	    driver.navigate().to("https://askomdch.com/");	   
+	    driver.findElement(By.xpath("//*[@id=\"post-61\"]/div/div[1]/div/div/div/div/div[1]/a")).click();;
+	    Thread.sleep(1000);
+	    JavascriptExecutor js = (JavascriptExecutor)driver;
+	    js.executeScript("window.scrollBy(0,450)", "");
+	    driver.findElement(By.xpath("//a[@data-product_id='1205']")).click();
+	    driver.findElement(By.xpath("//a[@data-product_id='1198']")).click();
+	    Thread.sleep(1000);
+	    driver.findElement(By.xpath("//a[@class='added_to_cart wc-forward']")).click();	
+	    driver.findElement(By.xpath("//a[@class='checkout-button button alt wc-forward']")).click();
+	    driver.findElement(By.xpath("//input[@id='billing_first_name']")).sendKeys("Santhosh");
+	    driver.findElement(By.xpath("//input[@id='billing_last_name']")).sendKeys("G");
+	    js.executeScript("window.scrollBy(0,450)", "");
+	    
+	    Thread.sleep(3000);
+	    driver.findElement(By.xpath("(//span[@class='selection'])[1]")).click();
+	    driver.findElement(By.xpath("//input[@class='select2-search__field']")).sendKeys("india");
+	    driver.findElement(By.xpath("//li[text()='India']")).click();	      
+	    
+	    driver.findElement(By.xpath("//input[@id='billing_address_1']")).sendKeys("Ramapuram");	    
+	    driver.findElement(By.xpath("//input[@id='billing_city']")).sendKeys("Chennai");
+	    
+	    driver.findElement(By.xpath("(//span[@class='selection'])[2]")).click();
+	    driver.findElement(By.xpath("//input[@class='select2-search__field']")).sendKeys("tamil nadu");
+	    driver.findElement(By.xpath("//li[text()='Tamil Nadu']")).click();
+	    
+	    driver.findElement(By.xpath("//input[@id='billing_postcode']")).sendKeys("600006");
+	    driver.findElement(By.xpath("//input[@id='billing_email']")).sendKeys("sandy29@gmail.com");
+
+	    Thread.sleep(1000);
+	    driver.findElement(By.xpath("//input[@value='cod']")).click();
+	    driver.findElement(By.xpath("//button[@id='place_order']")).click();
+	    
+	    /*Thread.sleep(3000);
+	    driver.findElement(By.xpath("//input[@id='woocommerce-product-search-field-0']")).sendKeys("basis Jeans");
+	    driver.findElement(By.xpath("//button[@type='submit']")).click();*/
+	    
+
+	    //js.executeScript("window.scrollBy(0,-200)", "");
+	    
+	    
+	    Thread.sleep(3000);
+	    driver.close();
+	    
+	    
+	    /*driver.navigate().to("https://demoqa.com/automation-practice-form");
+	    driver.findElement(By.xpath("//input[@id='firstName']")).sendKeys("Santhosh G");
+	    driver.findElement(By.xpath("//input[@id='lastName']")).sendKeys("G");
+	    driver.findElement(By.xpath("//input[@id='userEmail']")).sendKeys("sandy29@gmail.com");
+	    Thread.sleep(3000);
+	    driver.close();
+	    */
+	    
+	    
+	}
+
+}

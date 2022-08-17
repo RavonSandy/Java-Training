@@ -1,0 +1,101 @@
+package Step;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class StepDeff {
+	static WebDriver driver;
+	@Given("Launch the  Chrome browser")
+	public void launch_the_chrome_browser() {
+		ChromeOptions chromeOptions = new ChromeOptions();
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver(chromeOptions);
+		driver.manage().window().maximize();
+		
+    
+		throw new io.cucumber.java.PendingException();
+	}
+
+	@Given("Navigate to the Shopping site url")
+	public void navigate_to_the_shopping_site_url() {
+		driver.get("https://askomdch.com/");
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Navigate to the Account page")
+	public void navigate_to_the_account_page() {
+		driver.findElement(By.xpath("(//a[text()='Account'])[2]")).click();
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Enter the username and password")
+	public void enter_the_username_and_password() {
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys("Sandy");
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Sandy123");
+		driver.findElement(By.xpath("//button[@class='woocommerce-button button woocommerce-form-login__submit']")).click();
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Go to Home Page")
+	public void go_to_home_page() {
+		driver.findElement(By.xpath("(//a[text()='Home'])[2]")).click();
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Add to cart the products")
+	public void add_to_cart_the_products() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("View the products in cart page")
+	public void view_the_products_in_cart_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Given("Navigate to the Shopping url")
+	public void navigate_to_the_shopping_url() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Navigate to the Cart page")
+	public void navigate_to_the_cart_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Proceed to checkout")
+	public void proceed_to_checkout() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Enter the shipping details")
+	public void enter_the_shipping_details() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("click cash on delivery and Place order")
+	public void click_cash_on_delivery_and_place_order() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Logging out the shopping site")
+	public void logging_out_the_shopping_site() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+
+}

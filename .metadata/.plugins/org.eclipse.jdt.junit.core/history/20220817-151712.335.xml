@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner (1)" project="Orange" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="RunnerClass.TestRunner" time="0.209">
+    <testsuite name="Test Order Hooks" time="0.209">
+      <testcase name="First scenario to test Order Hooks functionality" classname="Test Order Hooks" time="0.105"/>
+      <testcase name="Second scenario to test Order Hooks functionality" classname="Test Order Hooks" time="0.104"/>
+    </testsuite>
+  </testsuite>
+</testrun>

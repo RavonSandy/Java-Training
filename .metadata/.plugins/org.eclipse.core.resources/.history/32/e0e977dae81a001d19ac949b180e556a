@@ -1,0 +1,10 @@
+
+@tag
+Feature: Checking login and logout credentails for OrangeHrm
+  @tag1
+  Scenario: Login and Logout
+    Given Launch the url
+    When Enter username and password
+    And Logging into the application
+    And Validate the homepage
+    Then Logging out the application

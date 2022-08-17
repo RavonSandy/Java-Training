@@ -1,0 +1,62 @@
+package actionss;
+
+import java.awt.List;
+import java.text.NumberFormat;
+import java.text.ParseException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+
+public class Key {
+
+	public static void main(String[] args) throws ParseException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chromedriver","chromedriver.exe");  
+	    WebDriver wd=new ChromeDriver();
+	    /*Actions acc = new Actions(driver);
+        WebElement txtUsername = driver.findElement(By.name("q"));
+        Action seriesOfActions = acc
+            .moveToElement(txtUsername)
+            .click()
+            .keyDown(txtUsername, Keys.SHIFT)
+            .sendKeys(txtUsername, "hello")
+            .keyUp(txtUsername, Keys.SHIFT)
+            .doubleClick(txtUsername)
+            .contextClick()
+            .build();
+            
+        seriesOfActions.perform() ;
+        driver.close();
+*/
+	    
+	    wd.get("http://demo.guru99.com/test/web-table-element.php");
+        String max;
+        double m=0,r=0;
+        
+          //No. of Columns
+           java.util.List<WebElement>  col = wd.findElements(By.xpath(".//*[@id='leftcontainer']/table/thead/tr/th"));
+           System.out.println("Total No of columns are : " +col.size());
+           //No.of rows
+           java.util.List<WebElement>  rows = wd.findElements(By.xpath (".//*[@id='leftcontainer']/table/tbody/tr/td[1]"));
+           System.out.println("Total No of rows are : " + rows.size());
+           for (int i =1;i<rows.size();i++)
+           {    
+               max= wd.findElement(By.xpath("//*[@id='leftcontainer']/table/tbody/tr["+(i+1)+"]/td[4]")).getText();
+               NumberFormat f =NumberFormat.getNumberInstance();
+               Number num = f.parse(max);
+               max = num.toString();
+               m = Double.parseDouble(max);
+               if(m>r)
+                {    
+                   r=m;
+                }
+           }
+           System.out.println("Maximum current price is : "+ r);
+	}
+
+}

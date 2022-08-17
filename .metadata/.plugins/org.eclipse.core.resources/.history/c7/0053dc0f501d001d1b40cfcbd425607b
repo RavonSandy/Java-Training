@@ -1,0 +1,20 @@
+package actionss;
+
+public class ExcelData {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Fillo fillo=new Fillo();
+        Connection connection=fillo.getConnection("C:\\Users\\santhoshg\\Desktop\\Selenium\\Test.xlsx");
+        String strQuery="Select * from Sheet1 where name='Myself'";
+        Recordset recordset=connection.executeQuery(strQuery);
+         
+        while(recordset.next()){
+        System.out.println(recordset.getField("Details"));
+        }     
+        recordset.close();
+        connection.close();
+
+	}
+
+}

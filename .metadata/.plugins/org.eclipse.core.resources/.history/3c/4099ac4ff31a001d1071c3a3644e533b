@@ -1,0 +1,45 @@
+package Stepdefinition;
+
+import org.openqa.selenium.WebDriver;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class StepDef {
+	static WebDriver driver;
+	
+	@Given("Launch the chrome browser")
+	public void launch() {
+		
+	}
+
+	@And("Navigate to the url")
+	public void navigate() {
+		
+	}
+	
+    @When("Enter the username and password")
+    public void logcred() {
+    	
+    }
+    
+    @And("Click the login button")
+    public void click() {
+    	
+    }
+   
+    @Then("Validate the home page")
+    public void validate() {
+    	
+    }
+    
+    @And("Logout the application")
+    public void logout(){
+    	
+    }
+
+
+
+}
